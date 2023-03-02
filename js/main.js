@@ -21,6 +21,7 @@ function addIndex (element, i) {
     element.innerText = i;
 }
 
+// A function to create a grid generator
 function gridGenerator (value) {
     let counter = 0;
 
@@ -66,22 +67,23 @@ play.addEventListener('click', function() {
 
     // Creation of the grid
     for (let i = 1; i <= cells; i++) {
-        // The cells have the proper classes and numbers
+        // The cells have the proper class and numbers
         const cell = elementCreation('div');
         addClass(cell, 'cell');
         addIndex(cell, i);
 
         // The number of cells in a row will be decided by a CSS class
         if (row === 10) {
-            cell.classList.add('cell-10');
+            addClass(cell, 'cell-10');
         } else if (row === 9) {
-            cell.classList.add('cell-9');
+            addClass(cell, 'cell-9');
         } else if (row === 7) {
-            cell.classList.add('cell-7');
+            addClass(cell, 'cell-7');
         }
 
         containerGrid.append(cell);
 
+        // The cells have a click eventListener 
         cell.addEventListener('click', function() {
             addClass(cell, 'active');
             console.log(i);
