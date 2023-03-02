@@ -9,3 +9,96 @@
     margin: 0;
     padding: 0;
 }
+
+/*
+=============
+ Var
+=============
+*/
+
+:root {
+    --border-color: #000000;
+    --main-color: #7fffd4;
+    --side-color: #ffffff;
+}
+
+/*
+=============
+ Common
+=============
+*/
+
+.flex {
+    display: flex;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.p-20 {
+    padding: 1.25rem;
+}
+
+/*
+=============
+ Container
+=============
+*/
+
+body {
+    background-color: var(--main-color);
+}
+
+.container {
+    flex-direction: column;
+    height: 100vh;
+}
+
+/*
+=============
+ Header
+=============
+*/
+
+header {
+    background-color: var(--side-color);
+}
+
+header .play {
+    text-align: right;
+}
+
+/*
+=============
+ Main
+=============
+*/
+
+main {
+    align-items: center;
+    justify-content: center;
+}
+
+main .grid {
+    align-content: flex-start;
+    flex-wrap: wrap;
+    height: 700px;
+    width: 700px;
+}
+
+main .cell {
+    border: 1px solid var(--border-color);
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+/*
+=============
+ Footer
+=============
+*/
+
+footer {
+    background-color: var(--side-color);
+}
