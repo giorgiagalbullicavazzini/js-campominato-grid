@@ -21,6 +21,31 @@ function addIndex (element, i) {
     element.innerText = i;
 }
 
+function gridGenerator (value) {
+    let counter = 0;
+
+    switch (value) {
+
+        case '':
+            alert('Seleziona la difficoltà!');
+            break;
+        
+        case 'easy':
+            counter = 10;
+            break;
+        
+        case 'medium':
+            counter = 9;
+            break;
+
+        case 'hard':
+            counter = 7;
+            break;
+    }
+
+    return counter;
+}
+
 ////////////
 // Main
 ////////////
@@ -35,21 +60,9 @@ play.addEventListener('click', function() {
     // Before playing the game, the user can select the difficulty level of the game: easy, medium or hard
     // The number of cells will be decided by recalling the proper function and by adding the correct value to the function arguments
     const difficulty = document.getElementById('difficulty').value;
-    let cells = 0;
-    let row = 0;
 
-    if (difficulty === '') {
-        alert('Seleziona la difficoltà!')
-    } else if (difficulty === 'easy') {
-        cells = 100;
-        row = 10;
-    } else if (difficulty === 'medium') {
-        cells = 81;
-        row = 9;
-    } else if (difficulty === 'hard') {
-        cells = 49;
-        row = 7;
-    }
+    const row = gridGenerator(difficulty);
+    const cells = row * row;
 
     // Creation of the grid
     for (let i = 1; i <= cells; i++) {
