@@ -4,17 +4,21 @@
 // Functions
 ////////////
 
-// A function to create every cell of the grid, with the proper classes and numbers and a click EventListener to console print the number of the cells
-function elementCreation (elementType, className, secondClassName, i) {
+// A function to create an element
+function elementCreation (elementType) {
     const element = document.createElement(elementType);
-    element.classList.add(className);
-    element.innerText = i;
-    element.addEventListener('click', function() {
-        console.log(i);
-        element.classList.add(secondClassName);
-    })
 
     return element;
+}
+
+// A function to add a class to an element
+function addClass (element, className) {
+    element.classList.add(className);
+}
+
+// A function to index a generic element
+function addIndex (element, i) {
+    element.innerText = i;
 }
 
 ////////////
@@ -22,8 +26,8 @@ function elementCreation (elementType, className, secondClassName, i) {
 ////////////
 
 // Thanks to a button, the user can generate a square grid
-const play = document.querySelector('.play');
 const containerGrid = document.querySelector('.grid');
+const play = document.querySelector('.play');
 
 play.addEventListener('click', function() {
     containerGrid.innerHTML = '';
@@ -50,7 +54,9 @@ play.addEventListener('click', function() {
     // Creation of the grid
     for (let i = 1; i <= cells; i++) {
         // The cells have the proper classes and numbers
-        const cell = elementCreation('div', 'cell', 'active', i);
+        const cell = elementCreation('div');
+        addClass(cell, 'cell');
+        addIndex(cell, i);
 
         // The number of cells in a row will be decided by a CSS class
         if (row === 10) {
@@ -62,5 +68,10 @@ play.addEventListener('click', function() {
         }
 
         containerGrid.append(cell);
-        }
+
+        cell.addEventListener('click', function() {
+            addClass(cell, 'active');
+            console.log(i);
+        })
+    }
 })
