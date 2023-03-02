@@ -65,7 +65,12 @@ header {
     background-color: var(--side-color);
 }
 
-header .play {
+header .header-left,
+header .header-right {
+    width: 50%;
+}
+
+header .header-right {
     text-align: right;
 }
 

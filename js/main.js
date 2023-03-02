@@ -21,16 +21,19 @@ function elementCreation (elementType, className, secondClassName, i) {
 // Main
 ////////////
 
-// Creation of the grid
+// Thanks to a button, the user can generate a square grid
+const play = document.querySelector('.play');
 const containerGrid = document.querySelector('.grid');
 
-for (let i = 1; i <= 100; i++) {
-    // The cells have the proper classes and numbers
-    const cell = elementCreation('div', 'cell', 'active', i);
-    containerGrid.append(cell);
+play.addEventListener('click', function() {
+    containerGrid.innerHTML = '';
+    // Creation of the grid
+    for (let i = 1; i <= 100; i++) {
+        // The cells have the proper classes and numbers
+        const cell = elementCreation('div', 'cell', 'active', i);
+        containerGrid.append(cell);
 }
-
-// Thanks to a button, the user can generate a square grid
+})
 
 // Before playing the game, the user can select the difficulty level of the game: easy, medium or hard
 // The selection can be made through a `select`
