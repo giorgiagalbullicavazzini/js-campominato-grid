@@ -1,8 +1,32 @@
 'use strict';
 
-// Thanks to a button, the user can generate a square grid
+////////////
+// Functions
+////////////
+
+// A function to create every cell of the grid
+function elementCreation (elementType, className) {
+    const element = document.createElement(elementType);
+    element.classList.add(className);
+
+    return element;
+}
+
+////////////
+// Main
+////////////
+
 // The grid will then be created by JavaScript through some functions
-// Thanks to the functions, we will be able to create every cell of the grid and give them the proper CSS classes and all the numbers between 1 and 100
+const containerGrid = document.querySelector('.grid');
+
+for (let i = 1; i <= 100; i++) {
+    // Thanks to the functions, we will be able to give them the proper CSS classes
+    const cell = elementCreation('div', 'cell');
+    containerGrid.append(cell);
+}
+
+// Thanks to a button, the user can generate a square grid
+// Thanks to the functions, we will be able to give them all the numbers between 1 and 100
 // Then, we can append the cells to the grid, 10 per row
 // Through another function, we can make the cells clickable
 // So, with a click, the user will be able to generate a console message with the proper number of the cell and to change the color of the same cell
