@@ -97,9 +97,21 @@ main .cell {
     border: 1px solid var(--border-color);
     display: flex;
     justify-content: center;
+}
 
+main .cell.cell-10 {
     height: calc(100% / 10);
     width: calc(100% / 10);
+}
+
+main .cell.cell-9 {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+main .cell.cell-7 {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
 }
 
 main .cell.active {
