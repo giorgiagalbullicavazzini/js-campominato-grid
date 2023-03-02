@@ -21,12 +21,6 @@ function elementCreation (elementType, className, secondClassName, i) {
 // Main
 ////////////
 
-// if (difficulty === easy) {
-//     console.log('Easy');
-// } else {
-//     console.log('Others');
-// }
-
 // Thanks to a button, the user can generate a square grid
 const play = document.querySelector('.play');
 const containerGrid = document.querySelector('.grid');
