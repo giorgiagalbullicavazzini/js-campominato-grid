@@ -40,6 +40,10 @@
     padding: 1.25rem;
 }
 
+img {
+    display: block;
+}
+
 /*
 =============
  Container
@@ -68,6 +72,10 @@ header {
 header .header-left,
 header .header-right {
     width: 50%;
+}
+
+header .logo img {
+    width: 3.125rem;
 }
 
 header .header-right {
