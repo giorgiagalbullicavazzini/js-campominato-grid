@@ -88,9 +88,17 @@ main .grid {
 }
 
 main .cell {
+    align-items: center;
     border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+
     height: calc(100% / 10);
     width: calc(100% / 10);
+}
+
+main .cell.active {
+    background-color: lightblue;
 }
 
 /*

@@ -4,10 +4,15 @@
 // Functions
 ////////////
 
-// A function to create every cell of the grid
-function elementCreation (elementType, className) {
+// A function to create every cell of the grid, with the proper classes and numbers and a click EventListener to console print the number of the cells
+function elementCreation (elementType, className, secondClassName, i) {
     const element = document.createElement(elementType);
     element.classList.add(className);
+    element.innerText = i;
+    element.addEventListener('click', function() {
+        console.log(i);
+        element.classList.add(secondClassName);
+    })
 
     return element;
 }
@@ -16,21 +21,16 @@ function elementCreation (elementType, className) {
 // Main
 ////////////
 
-// The grid will then be created by JavaScript through some functions
+// Creation of the grid
 const containerGrid = document.querySelector('.grid');
 
 for (let i = 1; i <= 100; i++) {
-    // Thanks to the functions, we will be able to give them the proper CSS classes
-    const cell = elementCreation('div', 'cell');
+    // The cells have the proper classes and numbers
+    const cell = elementCreation('div', 'cell', 'active', i);
     containerGrid.append(cell);
 }
 
 // Thanks to a button, the user can generate a square grid
-// Thanks to the functions, we will be able to give them all the numbers between 1 and 100
-// Then, we can append the cells to the grid, 10 per row
-// Through another function, we can make the cells clickable
-// So, with a click, the user will be able to generate a console message with the proper number of the cell and to change the color of the same cell
-
 
 // Before playing the game, the user can select the difficulty level of the game: easy, medium or hard
 // The selection can be made through a `select`
